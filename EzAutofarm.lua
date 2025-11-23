@@ -17,6 +17,7 @@ G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
 G2L["1"]["Name"] = [[EZAutofarm]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
 
 
 -- StarterGui.EZAutofarm.Background
@@ -1462,9 +1463,11 @@ G2L["91"]["BackgroundTransparency"] = 0.5;
 
 -- StarterGui.EZAutofarm.Background.NotificationContainer.Template.Title
 G2L["92"] = Instance.new("TextLabel", G2L["8f"]);
+G2L["92"]["TextWrapped"] = true;
 G2L["92"]["Interactable"] = false;
 G2L["92"]["BorderSizePixel"] = 0;
 G2L["92"]["TextSize"] = 20;
+G2L["92"]["TextScaled"] = true;
 G2L["92"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["92"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 G2L["92"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
@@ -1479,7 +1482,8 @@ G2L["92"]["Position"] = UDim2.new(0.5, 0, 0.09929, 0);
 
 -- StarterGui.EZAutofarm.Background.NotificationContainer.Template.Title.UIPadding
 G2L["93"] = Instance.new("UIPadding", G2L["92"]);
-
+G2L["93"]["PaddingTop"] = UDim.new(0, 3);
+G2L["93"]["PaddingBottom"] = UDim.new(0, 3);
 
 
 -- StarterGui.EZAutofarm.Background.NotificationContainer.Template.UIStroke
