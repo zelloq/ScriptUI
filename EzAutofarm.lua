@@ -1391,6 +1391,7 @@ G2L["8b"]["PaddingBottom"] = UDim.new(0, 15);
 -- StarterGui.EZAutofarm.Background.Main.UIDragDetector
 G2L["8c"] = Instance.new("UIDragDetector", G2L["3"]);
 G2L["8c"]["SelectionModeDragSpeed"] = UDim2.new(1, 0, 1, 0);
+G2L["8c"]["BoundingUI"] = G2L["1"]
 -- [ERROR] cannot convert BoundingUI, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
 
 
