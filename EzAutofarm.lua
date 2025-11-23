@@ -1237,7 +1237,7 @@ G2L["78"]["CornerRadius"] = UDim.new(0, 3);
 -- StarterGui.EZAutofarm.Background.Main.Selections.Sequencer.UIStroke
 G2L["79"] = Instance.new("UIStroke", G2L["77"]);
 G2L["79"]["Transparency"] = 0.12;
-G2L["79"]["Thickness"] = 2.6;
+G2L["79"]["Thickness"] = 2;
 G2L["79"]["Color"] = Color3.fromRGB(34, 34, 34);
 G2L["79"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
@@ -1280,7 +1280,7 @@ G2L["7d"]["CornerRadius"] = UDim.new(0, 3);
 -- StarterGui.EZAutofarm.Background.Main.Selections.Waypoints.UIStroke
 G2L["7e"] = Instance.new("UIStroke", G2L["7c"]);
 G2L["7e"]["Transparency"] = 0.12;
-G2L["7e"]["Thickness"] = 2.6;
+G2L["7e"]["Thickness"] = 2;
 G2L["7e"]["Color"] = Color3.fromRGB(34, 34, 34);
 G2L["7e"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
@@ -1317,7 +1317,7 @@ G2L["81"]["CornerRadius"] = UDim.new(0, 3);
 -- StarterGui.EZAutofarm.Background.Main.Selections.Coordinates.UIStroke
 G2L["82"] = Instance.new("UIStroke", G2L["80"]);
 G2L["82"]["Transparency"] = 0.12;
-G2L["82"]["Thickness"] = 2.6;
+G2L["82"]["Thickness"] = 2;
 G2L["82"]["Color"] = Color3.fromRGB(34, 34, 34);
 G2L["82"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
@@ -1354,7 +1354,7 @@ G2L["85"]["CornerRadius"] = UDim.new(0, 3);
 -- StarterGui.EZAutofarm.Background.Main.Selections.Queues.UIStroke
 G2L["86"] = Instance.new("UIStroke", G2L["84"]);
 G2L["86"]["Transparency"] = 0.12;
-G2L["86"]["Thickness"] = 2.6;
+G2L["86"]["Thickness"] = 2;
 G2L["86"]["Color"] = Color3.fromRGB(34, 34, 34);
 G2L["86"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
@@ -1391,7 +1391,7 @@ G2L["89"]["CornerRadius"] = UDim.new(0, 3);
 -- StarterGui.EZAutofarm.Background.Main.Selections.Options.UIStroke
 G2L["8a"] = Instance.new("UIStroke", G2L["88"]);
 G2L["8a"]["Transparency"] = 0.12;
-G2L["8a"]["Thickness"] = 2.6;
+G2L["8a"]["Thickness"] = 2;
 G2L["8a"]["Color"] = Color3.fromRGB(34, 34, 34);
 G2L["8a"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
