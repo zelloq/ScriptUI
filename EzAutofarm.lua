@@ -7,11 +7,12 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 153 | Scripts: 0 | Modules: 0 | Tags: 0
+-- Instances: 153 | Scripts: 0 | Modules: 0 | Tags: 4
+local CollectionService = game:GetService("CollectionService");
 local G2L = {};
 
 -- StarterGui.EZAutofarm
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
 G2L["1"]["Name"] = [[EZAutofarm]];
@@ -36,7 +37,7 @@ G2L["3"]["BorderSizePixel"] = 0;
 G2L["3"]["BackgroundColor3"] = Color3.fromRGB(37, 37, 37);
 G2L["3"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 G2L["3"]["Size"] = UDim2.new(0, 270, 0, 416);
-G2L["3"]["Position"] = UDim2.new(0.44407, -302, 0.33959, 122);
+G2L["3"]["Position"] = UDim2.new(0.44407, -161, 0.33959, 126);
 G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["Name"] = [[Main]];
 G2L["3"]["BackgroundTransparency"] = 0.2;
@@ -110,6 +111,7 @@ G2L["b"] = Instance.new("ScrollingFrame", G2L["a"]);
 G2L["b"]["Active"] = true;
 G2L["b"]["BorderSizePixel"] = 0;
 G2L["b"]["CanvasSize"] = UDim2.new(0, 0, 6, 0);
+G2L["b"]["ElasticBehavior"] = Enum.ElasticBehavior.Always;
 G2L["b"]["Name"] = [[Sequencer]];
 G2L["b"]["ScrollBarImageTransparency"] = 0.6;
 G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -226,6 +228,7 @@ G2L["17"]["Visible"] = false;
 G2L["17"]["Active"] = true;
 G2L["17"]["BorderSizePixel"] = 0;
 G2L["17"]["CanvasSize"] = UDim2.new(0, 0, 6, 0);
+G2L["17"]["ElasticBehavior"] = Enum.ElasticBehavior.Always;
 G2L["17"]["Name"] = [[SelectionTab]];
 G2L["17"]["ScrollBarImageTransparency"] = 0.6;
 G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -255,6 +258,7 @@ G2L["1a"]["Visible"] = false;
 G2L["1a"]["Active"] = true;
 G2L["1a"]["BorderSizePixel"] = 0;
 G2L["1a"]["CanvasSize"] = UDim2.new(0, 0, 6, 0);
+G2L["1a"]["ElasticBehavior"] = Enum.ElasticBehavior.Always;
 G2L["1a"]["Name"] = [[Queues]];
 G2L["1a"]["ScrollBarImageTransparency"] = 0.6;
 G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -312,6 +316,7 @@ G2L["20"]["Visible"] = false;
 G2L["20"]["Active"] = true;
 G2L["20"]["BorderSizePixel"] = 0;
 G2L["20"]["CanvasSize"] = UDim2.new(0, 0, 6, 0);
+G2L["20"]["ElasticBehavior"] = Enum.ElasticBehavior.Always;
 G2L["20"]["Name"] = [[Coordinates]];
 G2L["20"]["ScrollBarImageTransparency"] = 0.6;
 G2L["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -369,6 +374,7 @@ G2L["26"]["Visible"] = false;
 G2L["26"]["Active"] = true;
 G2L["26"]["BorderSizePixel"] = 0;
 G2L["26"]["CanvasSize"] = UDim2.new(0, 0, 6, 0);
+G2L["26"]["ElasticBehavior"] = Enum.ElasticBehavior.Always;
 G2L["26"]["Name"] = [[Options]];
 G2L["26"]["ScrollBarImageTransparency"] = 0.6;
 G2L["26"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -475,6 +481,8 @@ G2L["2f"]["Name"] = [[BaseButton]];
 G2L["2f"]["Visible"] = false;
 G2L["2f"]["Position"] = UDim2.new(0.12963, 0, 0, 0);
 
+-- Tags
+CollectionService:AddTag(G2L["2f"], [[Disposable]]);
 
 -- StarterGui.EZAutofarm.Background.Main.Storage.BaseButton.UICorner
 G2L["30"] = Instance.new("UICorner", G2L["2f"]);
@@ -514,6 +522,8 @@ G2L["33"]["Name"] = [[WaypointButton]];
 G2L["33"]["Visible"] = false;
 G2L["33"]["Position"] = UDim2.new(-0.04766, 0, 0.07342, 0);
 
+-- Tags
+CollectionService:AddTag(G2L["33"], [[Disposable]]);
 
 -- StarterGui.EZAutofarm.Background.Main.Storage.WaypointButton.UICorner
 G2L["34"] = Instance.new("UICorner", G2L["33"]);
@@ -662,366 +672,375 @@ G2L["42"]["Color"] = Color3.fromRGB(34, 34, 34);
 G2L["42"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton
-G2L["43"] = Instance.new("TextButton", G2L["29"]);
-G2L["43"]["BorderSizePixel"] = 0;
-G2L["43"]["TextSize"] = 20;
-G2L["43"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["43"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["43"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["43"]["ZIndex"] = 2;
-G2L["43"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["43"]["BackgroundTransparency"] = 0.6;
-G2L["43"]["Size"] = UDim2.new(0, 247, 0, 36);
-G2L["43"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["43"]["Text"] = [[]];
-G2L["43"]["Name"] = [[CoordinateButton]];
-G2L["43"]["Visible"] = false;
-G2L["43"]["Position"] = UDim2.new(0.62593, 0, 0.04865, 0);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.UICorner
-G2L["44"] = Instance.new("UICorner", G2L["43"]);
-G2L["44"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.Delete
-G2L["45"] = Instance.new("ImageButton", G2L["43"]);
-G2L["45"]["BorderSizePixel"] = 0;
-G2L["45"]["BackgroundTransparency"] = 1;
-G2L["45"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["45"]["ImageColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["45"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["45"]["Image"] = [[rbxassetid://13857725039]];
-G2L["45"]["Size"] = UDim2.new(0, 22, 0, 22);
-G2L["45"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["45"]["Name"] = [[Delete]];
-G2L["45"]["Rotation"] = 45;
-G2L["45"]["Position"] = UDim2.new(0.07642, 0, 0.47167, 0);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.CoordName
-G2L["46"] = Instance.new("TextBox", G2L["43"]);
-G2L["46"]["Name"] = [[CoordName]];
-G2L["46"]["PlaceholderColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["46"]["BorderSizePixel"] = 0;
-G2L["46"]["TextWrapped"] = true;
-G2L["46"]["TextTransparency"] = 0.2;
-G2L["46"]["TextSize"] = 15;
-G2L["46"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["46"]["TextScaled"] = true;
-G2L["46"]["BackgroundColor3"] = Color3.fromRGB(55, 55, 55);
-G2L["46"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["46"]["PlaceholderText"] = [[Unnamed]];
-G2L["46"]["Size"] = UDim2.new(0, 86, 0, 22);
-G2L["46"]["Position"] = UDim2.new(0.6253, 0, 0.19389, 0);
-G2L["46"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["46"]["Text"] = [[Unnamed]];
-G2L["46"]["BackgroundTransparency"] = 0.6;
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.CoordName.UICorner
-G2L["47"] = Instance.new("UICorner", G2L["46"]);
-G2L["47"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.CoordName.UIPadding
-G2L["48"] = Instance.new("UIPadding", G2L["46"]);
-G2L["48"]["PaddingTop"] = UDim.new(0, 4);
-G2L["48"]["PaddingRight"] = UDim.new(0, 4);
-G2L["48"]["PaddingLeft"] = UDim.new(0, 4);
-G2L["48"]["PaddingBottom"] = UDim.new(0, 4);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.XCoord
-G2L["49"] = Instance.new("TextLabel", G2L["43"]);
-G2L["49"]["TextWrapped"] = true;
-G2L["49"]["BorderSizePixel"] = 0;
-G2L["49"]["TextSize"] = 14;
-G2L["49"]["TextScaled"] = true;
-G2L["49"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["49"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["49"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["49"]["BackgroundTransparency"] = 0.6;
-G2L["49"]["Size"] = UDim2.new(0, 50, 0, 22);
-G2L["49"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["49"]["Text"] = [[X]];
-G2L["49"]["Name"] = [[XCoord]];
-G2L["49"]["Position"] = UDim2.new(0.152, 0, 0.194, 0);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.XCoord.UICorner
-G2L["4a"] = Instance.new("UICorner", G2L["49"]);
-G2L["4a"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.XCoord.UIPadding
-G2L["4b"] = Instance.new("UIPadding", G2L["49"]);
-G2L["4b"]["PaddingTop"] = UDim.new(0, 3);
-G2L["4b"]["PaddingRight"] = UDim.new(0, 3);
-G2L["4b"]["PaddingLeft"] = UDim.new(0, 3);
-G2L["4b"]["PaddingBottom"] = UDim.new(0, 3);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.YCoord
-G2L["4c"] = Instance.new("TextLabel", G2L["43"]);
-G2L["4c"]["TextWrapped"] = true;
-G2L["4c"]["BorderSizePixel"] = 0;
-G2L["4c"]["TextSize"] = 14;
-G2L["4c"]["TextScaled"] = true;
-G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["4c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["4c"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["4c"]["BackgroundTransparency"] = 0.6;
-G2L["4c"]["Size"] = UDim2.new(0, 50, 0, 22);
-G2L["4c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4c"]["Text"] = [[Y]];
-G2L["4c"]["Name"] = [[YCoord]];
-G2L["4c"]["Position"] = UDim2.new(0.375, 0, 0.194, 0);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.YCoord.UICorner
-G2L["4d"] = Instance.new("UICorner", G2L["4c"]);
-G2L["4d"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.YCoord.UIPadding
-G2L["4e"] = Instance.new("UIPadding", G2L["4c"]);
-G2L["4e"]["PaddingTop"] = UDim.new(0, 3);
-G2L["4e"]["PaddingRight"] = UDim.new(0, 3);
-G2L["4e"]["PaddingLeft"] = UDim.new(0, 3);
-G2L["4e"]["PaddingBottom"] = UDim.new(0, 3);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.UIStroke
-G2L["4f"] = Instance.new("UIStroke", G2L["43"]);
-G2L["4f"]["Thickness"] = 1.5;
-G2L["4f"]["Color"] = Color3.fromRGB(34, 34, 34);
-G2L["4f"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
 -- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets
-G2L["50"] = Instance.new("Folder", G2L["29"]);
-G2L["50"]["Name"] = [[SettingsAssets]];
+G2L["43"] = Instance.new("Folder", G2L["29"]);
+G2L["43"]["Name"] = [[SettingsAssets]];
 
 
 -- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.ButtonSetting
-G2L["51"] = Instance.new("TextButton", G2L["50"]);
-G2L["51"]["TextWrapped"] = true;
-G2L["51"]["BorderSizePixel"] = 0;
-G2L["51"]["TextSize"] = 14;
-G2L["51"]["TextScaled"] = true;
-G2L["51"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["51"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["51"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["51"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["51"]["BackgroundTransparency"] = 0.6;
-G2L["51"]["Size"] = UDim2.new(0, 247, 0, 36);
-G2L["51"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["51"]["Text"] = [[CLICK ME!]];
-G2L["51"]["Name"] = [[ButtonSetting]];
-G2L["51"]["Visible"] = false;
+G2L["44"] = Instance.new("TextButton", G2L["43"]);
+G2L["44"]["TextWrapped"] = true;
+G2L["44"]["BorderSizePixel"] = 0;
+G2L["44"]["TextSize"] = 14;
+G2L["44"]["TextScaled"] = true;
+G2L["44"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["44"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["44"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+G2L["44"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["44"]["BackgroundTransparency"] = 0.6;
+G2L["44"]["Size"] = UDim2.new(0, 247, 0, 36);
+G2L["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["44"]["Text"] = [[CLICK ME!]];
+G2L["44"]["Name"] = [[ButtonSetting]];
+G2L["44"]["Visible"] = false;
 
 
 -- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.ButtonSetting.UICorner
+G2L["45"] = Instance.new("UICorner", G2L["44"]);
+G2L["45"]["CornerRadius"] = UDim.new(0, 5);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.ButtonSetting.UIPadding
+G2L["46"] = Instance.new("UIPadding", G2L["44"]);
+G2L["46"]["PaddingTop"] = UDim.new(0, 10);
+G2L["46"]["PaddingRight"] = UDim.new(0, 10);
+G2L["46"]["PaddingLeft"] = UDim.new(0, 10);
+G2L["46"]["PaddingBottom"] = UDim.new(0, 10);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.ButtonSetting.UIStroke
+G2L["47"] = Instance.new("UIStroke", G2L["44"]);
+G2L["47"]["Thickness"] = 1.5;
+G2L["47"]["Color"] = Color3.fromRGB(34, 34, 34);
+G2L["47"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting
+G2L["48"] = Instance.new("TextLabel", G2L["43"]);
+G2L["48"]["BorderSizePixel"] = 0;
+G2L["48"]["TextSize"] = 14;
+G2L["48"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["48"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["48"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["48"]["BackgroundTransparency"] = 0.6;
+G2L["48"]["Size"] = UDim2.new(0, 247, 0, 36);
+G2L["48"]["Visible"] = false;
+G2L["48"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["48"]["Text"] = [[]];
+G2L["48"]["Name"] = [[BooleanSetting]];
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.UICorner
+G2L["49"] = Instance.new("UICorner", G2L["48"]);
+G2L["49"]["CornerRadius"] = UDim.new(0, 5);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.UIStroke
+G2L["4a"] = Instance.new("UIStroke", G2L["48"]);
+G2L["4a"]["Thickness"] = 1.5;
+G2L["4a"]["Color"] = Color3.fromRGB(34, 34, 34);
+G2L["4a"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingDesc
+G2L["4b"] = Instance.new("TextLabel", G2L["48"]);
+G2L["4b"]["TextWrapped"] = true;
+G2L["4b"]["BorderSizePixel"] = 0;
+G2L["4b"]["TextSize"] = 14;
+G2L["4b"]["TextScaled"] = true;
+G2L["4b"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["4b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+G2L["4b"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["4b"]["BackgroundTransparency"] = 1;
+G2L["4b"]["Size"] = UDim2.new(0, 175, 0, 36);
+G2L["4b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4b"]["Text"] = [[Visualize Waypoints]];
+G2L["4b"]["Name"] = [[SettingDesc]];
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingDesc.UICorner
+G2L["4c"] = Instance.new("UICorner", G2L["4b"]);
+G2L["4c"]["CornerRadius"] = UDim.new(0, 3);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingDesc.UIPadding
+G2L["4d"] = Instance.new("UIPadding", G2L["4b"]);
+G2L["4d"]["PaddingTop"] = UDim.new(0, 5);
+G2L["4d"]["PaddingRight"] = UDim.new(0, 5);
+G2L["4d"]["PaddingLeft"] = UDim.new(0, 5);
+G2L["4d"]["PaddingBottom"] = UDim.new(0, 5);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingValue
+G2L["4e"] = Instance.new("TextButton", G2L["48"]);
+G2L["4e"]["BorderSizePixel"] = 0;
+G2L["4e"]["TextSize"] = 14;
+G2L["4e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(15, 255, 23);
+G2L["4e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["4e"]["BackgroundTransparency"] = 0.6;
+G2L["4e"]["Size"] = UDim2.new(0, 25, 0, 25);
+G2L["4e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4e"]["Text"] = [[]];
+G2L["4e"]["Name"] = [[SettingValue]];
+G2L["4e"]["Position"] = UDim2.new(0.92024, 0, 0.5, 0);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingValue.UICorner
+G2L["4f"] = Instance.new("UICorner", G2L["4e"]);
+G2L["4f"]["CornerRadius"] = UDim.new(0, 5);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingValue.UIPadding
+G2L["50"] = Instance.new("UIPadding", G2L["4e"]);
+G2L["50"]["PaddingTop"] = UDim.new(0, 3);
+G2L["50"]["PaddingRight"] = UDim.new(0, 3);
+G2L["50"]["PaddingLeft"] = UDim.new(0, 3);
+G2L["50"]["PaddingBottom"] = UDim.new(0, 3);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting
+G2L["51"] = Instance.new("TextLabel", G2L["43"]);
+G2L["51"]["BorderSizePixel"] = 0;
+G2L["51"]["TextSize"] = 14;
+G2L["51"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["51"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["51"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["51"]["BackgroundTransparency"] = 0.6;
+G2L["51"]["Size"] = UDim2.new(0, 247, 0, 36);
+G2L["51"]["Visible"] = false;
+G2L["51"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["51"]["Text"] = [[]];
+G2L["51"]["Name"] = [[DefaultSetting]];
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.UICorner
 G2L["52"] = Instance.new("UICorner", G2L["51"]);
 G2L["52"]["CornerRadius"] = UDim.new(0, 5);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.ButtonSetting.UIPadding
-G2L["53"] = Instance.new("UIPadding", G2L["51"]);
-G2L["53"]["PaddingTop"] = UDim.new(0, 10);
-G2L["53"]["PaddingRight"] = UDim.new(0, 10);
-G2L["53"]["PaddingLeft"] = UDim.new(0, 10);
-G2L["53"]["PaddingBottom"] = UDim.new(0, 10);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.ButtonSetting.UIStroke
-G2L["54"] = Instance.new("UIStroke", G2L["51"]);
-G2L["54"]["Thickness"] = 1.5;
-G2L["54"]["Color"] = Color3.fromRGB(34, 34, 34);
-G2L["54"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting
-G2L["55"] = Instance.new("TextLabel", G2L["50"]);
-G2L["55"]["BorderSizePixel"] = 0;
-G2L["55"]["TextSize"] = 14;
-G2L["55"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["55"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["55"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["55"]["BackgroundTransparency"] = 0.6;
-G2L["55"]["Size"] = UDim2.new(0, 247, 0, 36);
-G2L["55"]["Visible"] = false;
-G2L["55"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["55"]["Text"] = [[]];
-G2L["55"]["Name"] = [[BooleanSetting]];
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.UICorner
-G2L["56"] = Instance.new("UICorner", G2L["55"]);
-G2L["56"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.UIStroke
-G2L["57"] = Instance.new("UIStroke", G2L["55"]);
-G2L["57"]["Thickness"] = 1.5;
-G2L["57"]["Color"] = Color3.fromRGB(34, 34, 34);
-G2L["57"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingDesc
-G2L["58"] = Instance.new("TextLabel", G2L["55"]);
-G2L["58"]["TextWrapped"] = true;
-G2L["58"]["BorderSizePixel"] = 0;
-G2L["58"]["TextSize"] = 14;
-G2L["58"]["TextScaled"] = true;
-G2L["58"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["58"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["58"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["58"]["BackgroundTransparency"] = 1;
-G2L["58"]["Size"] = UDim2.new(0, 175, 0, 36);
-G2L["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["58"]["Text"] = [[Visualize Waypoints]];
-G2L["58"]["Name"] = [[SettingDesc]];
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingDesc.UICorner
-G2L["59"] = Instance.new("UICorner", G2L["58"]);
-G2L["59"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingDesc.UIPadding
-G2L["5a"] = Instance.new("UIPadding", G2L["58"]);
-G2L["5a"]["PaddingTop"] = UDim.new(0, 5);
-G2L["5a"]["PaddingRight"] = UDim.new(0, 5);
-G2L["5a"]["PaddingLeft"] = UDim.new(0, 5);
-G2L["5a"]["PaddingBottom"] = UDim.new(0, 5);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingValue
-G2L["5b"] = Instance.new("TextButton", G2L["55"]);
-G2L["5b"]["BorderSizePixel"] = 0;
-G2L["5b"]["TextSize"] = 14;
-G2L["5b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5b"]["BackgroundColor3"] = Color3.fromRGB(15, 255, 23);
-G2L["5b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["5b"]["BackgroundTransparency"] = 0.6;
-G2L["5b"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["5b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5b"]["Text"] = [[]];
-G2L["5b"]["Name"] = [[SettingValue]];
-G2L["5b"]["Position"] = UDim2.new(0.92024, 0, 0.5, 0);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingValue.UICorner
-G2L["5c"] = Instance.new("UICorner", G2L["5b"]);
-G2L["5c"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.BooleanSetting.SettingValue.UIPadding
-G2L["5d"] = Instance.new("UIPadding", G2L["5b"]);
-G2L["5d"]["PaddingTop"] = UDim.new(0, 3);
-G2L["5d"]["PaddingRight"] = UDim.new(0, 3);
-G2L["5d"]["PaddingLeft"] = UDim.new(0, 3);
-G2L["5d"]["PaddingBottom"] = UDim.new(0, 3);
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting
-G2L["5e"] = Instance.new("TextLabel", G2L["50"]);
-G2L["5e"]["BorderSizePixel"] = 0;
-G2L["5e"]["TextSize"] = 14;
-G2L["5e"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["5e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5e"]["BackgroundTransparency"] = 0.6;
-G2L["5e"]["Size"] = UDim2.new(0, 247, 0, 36);
-G2L["5e"]["Visible"] = false;
-G2L["5e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5e"]["Text"] = [[]];
-G2L["5e"]["Name"] = [[DefaultSetting]];
-
-
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.UICorner
-G2L["5f"] = Instance.new("UICorner", G2L["5e"]);
-G2L["5f"]["CornerRadius"] = UDim.new(0, 5);
-
-
 -- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.UIStroke
-G2L["60"] = Instance.new("UIStroke", G2L["5e"]);
+G2L["53"] = Instance.new("UIStroke", G2L["51"]);
+G2L["53"]["Thickness"] = 1.5;
+G2L["53"]["Color"] = Color3.fromRGB(34, 34, 34);
+G2L["53"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingValue
+G2L["54"] = Instance.new("TextBox", G2L["51"]);
+G2L["54"]["Name"] = [[SettingValue]];
+G2L["54"]["PlaceholderColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["54"]["BorderSizePixel"] = 0;
+G2L["54"]["TextWrapped"] = true;
+G2L["54"]["TextTransparency"] = 0.2;
+G2L["54"]["TextSize"] = 15;
+G2L["54"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["54"]["TextScaled"] = true;
+G2L["54"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["54"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["54"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["54"]["PlaceholderText"] = [[1]];
+G2L["54"]["Size"] = UDim2.new(0, 50, 0, 25);
+G2L["54"]["Position"] = UDim2.new(0.86903, 0, 0.5, 0);
+G2L["54"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["54"]["Text"] = [[]];
+G2L["54"]["BackgroundTransparency"] = 0.6;
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingValue.UICorner
+G2L["55"] = Instance.new("UICorner", G2L["54"]);
+G2L["55"]["CornerRadius"] = UDim.new(0, 3);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingValue.UIPadding
+G2L["56"] = Instance.new("UIPadding", G2L["54"]);
+G2L["56"]["PaddingTop"] = UDim.new(0, 4);
+G2L["56"]["PaddingRight"] = UDim.new(0, 4);
+G2L["56"]["PaddingLeft"] = UDim.new(0, 4);
+G2L["56"]["PaddingBottom"] = UDim.new(0, 4);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingDesc
+G2L["57"] = Instance.new("TextLabel", G2L["51"]);
+G2L["57"]["TextWrapped"] = true;
+G2L["57"]["BorderSizePixel"] = 0;
+G2L["57"]["TextSize"] = 14;
+G2L["57"]["TextScaled"] = true;
+G2L["57"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["57"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+G2L["57"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["57"]["BackgroundTransparency"] = 1;
+G2L["57"]["Size"] = UDim2.new(0, 175, 0, 36);
+G2L["57"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["57"]["Text"] = [[Setting Description]];
+G2L["57"]["Name"] = [[SettingDesc]];
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingDesc.UICorner
+G2L["58"] = Instance.new("UICorner", G2L["57"]);
+G2L["58"]["CornerRadius"] = UDim.new(0, 3);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingDesc.UIPadding
+G2L["59"] = Instance.new("UIPadding", G2L["57"]);
+G2L["59"]["PaddingTop"] = UDim.new(0, 5);
+G2L["59"]["PaddingRight"] = UDim.new(0, 5);
+G2L["59"]["PaddingLeft"] = UDim.new(0, 5);
+G2L["59"]["PaddingBottom"] = UDim.new(0, 5);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton
+G2L["5a"] = Instance.new("TextButton", G2L["29"]);
+G2L["5a"]["BorderSizePixel"] = 0;
+G2L["5a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["5a"]["TextSize"] = 20;
+G2L["5a"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["5a"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["5a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+G2L["5a"]["ZIndex"] = 2;
+G2L["5a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["5a"]["BackgroundTransparency"] = 0.6;
+G2L["5a"]["Size"] = UDim2.new(0, 247, 0, 36);
+G2L["5a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5a"]["Text"] = [[]];
+G2L["5a"]["Name"] = [[ActionButton]];
+G2L["5a"]["Visible"] = false;
+G2L["5a"]["Position"] = UDim2.new(-0.04766, 0, 0.07342, 0);
+
+-- Tags
+CollectionService:AddTag(G2L["5a"], [[Disposable]]);
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.UICorner
+G2L["5b"] = Instance.new("UICorner", G2L["5a"]);
+G2L["5b"]["CornerRadius"] = UDim.new(0, 5);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.Argument
+G2L["5c"] = Instance.new("TextButton", G2L["5a"]);
+G2L["5c"]["TextWrapped"] = true;
+G2L["5c"]["BorderSizePixel"] = 0;
+G2L["5c"]["TextSize"] = 20;
+G2L["5c"]["TextScaled"] = true;
+G2L["5c"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["5c"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["5c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+G2L["5c"]["ZIndex"] = 2;
+G2L["5c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["5c"]["BackgroundTransparency"] = 0.6;
+G2L["5c"]["Size"] = UDim2.new(0, 65, 0, 25);
+G2L["5c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5c"]["Text"] = [[...]];
+G2L["5c"]["Name"] = [[Argument]];
+G2L["5c"]["Position"] = UDim2.new(0.79973, 0, 0.5, 0);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.Argument.UICorner
+G2L["5d"] = Instance.new("UICorner", G2L["5c"]);
+G2L["5d"]["CornerRadius"] = UDim.new(0, 3);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.Argument.UIPadding
+G2L["5e"] = Instance.new("UIPadding", G2L["5c"]);
+G2L["5e"]["PaddingTop"] = UDim.new(0, 4);
+G2L["5e"]["PaddingRight"] = UDim.new(0, 4);
+G2L["5e"]["PaddingLeft"] = UDim.new(0, 4);
+G2L["5e"]["PaddingBottom"] = UDim.new(0, 4);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.UIPadding
+G2L["5f"] = Instance.new("UIPadding", G2L["5a"]);
+G2L["5f"]["PaddingTop"] = UDim.new(0, 2);
+G2L["5f"]["PaddingRight"] = UDim.new(0, 5);
+G2L["5f"]["PaddingLeft"] = UDim.new(0, 60);
+G2L["5f"]["PaddingBottom"] = UDim.new(0, 2);
+
+
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.UIStroke
+G2L["60"] = Instance.new("UIStroke", G2L["5a"]);
 G2L["60"]["Thickness"] = 1.5;
 G2L["60"]["Color"] = Color3.fromRGB(34, 34, 34);
 G2L["60"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingValue
-G2L["61"] = Instance.new("TextBox", G2L["5e"]);
-G2L["61"]["Name"] = [[SettingValue]];
-G2L["61"]["PlaceholderColor3"] = Color3.fromRGB(215, 215, 215);
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.Delete
+G2L["61"] = Instance.new("ImageButton", G2L["5a"]);
 G2L["61"]["BorderSizePixel"] = 0;
-G2L["61"]["TextWrapped"] = true;
-G2L["61"]["TextTransparency"] = 0.2;
-G2L["61"]["TextSize"] = 15;
-G2L["61"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["61"]["TextScaled"] = true;
-G2L["61"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["61"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["61"]["BackgroundTransparency"] = 1;
+G2L["61"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["61"]["ImageColor3"] = Color3.fromRGB(215, 215, 215);
 G2L["61"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["61"]["PlaceholderText"] = [[1]];
-G2L["61"]["Size"] = UDim2.new(0, 50, 0, 25);
-G2L["61"]["Position"] = UDim2.new(0.86903, 0, 0.5, 0);
+G2L["61"]["Image"] = [[rbxassetid://13857725039]];
+G2L["61"]["Size"] = UDim2.new(0, 22, 0, 22);
 G2L["61"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["61"]["Text"] = [[]];
-G2L["61"]["BackgroundTransparency"] = 0.6;
+G2L["61"]["Name"] = [[Delete]];
+G2L["61"]["Rotation"] = 45;
+G2L["61"]["Position"] = UDim2.new(-0.23391, 0, 0.52156, 0);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingValue.UICorner
-G2L["62"] = Instance.new("UICorner", G2L["61"]);
-G2L["62"]["CornerRadius"] = UDim.new(0, 3);
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.LayOrder
+G2L["62"] = Instance.new("TextBox", G2L["5a"]);
+G2L["62"]["Name"] = [[LayOrder]];
+G2L["62"]["PlaceholderColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["62"]["BorderSizePixel"] = 0;
+G2L["62"]["TextWrapped"] = true;
+G2L["62"]["TextSize"] = 14;
+G2L["62"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["62"]["TextScaled"] = true;
+G2L["62"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["62"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+G2L["62"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["62"]["ClearTextOnFocus"] = false;
+G2L["62"]["PlaceholderText"] = [[...]];
+G2L["62"]["Size"] = UDim2.new(0, 22, 0, 22);
+G2L["62"]["Position"] = UDim2.new(-0.1, 0, 0.474, 0);
+G2L["62"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["62"]["Text"] = [[1]];
+G2L["62"]["BackgroundTransparency"] = 0.6;
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingValue.UIPadding
-G2L["63"] = Instance.new("UIPadding", G2L["61"]);
-G2L["63"]["PaddingTop"] = UDim.new(0, 4);
-G2L["63"]["PaddingRight"] = UDim.new(0, 4);
-G2L["63"]["PaddingLeft"] = UDim.new(0, 4);
-G2L["63"]["PaddingBottom"] = UDim.new(0, 4);
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.LayOrder.UICorner
+G2L["63"] = Instance.new("UICorner", G2L["62"]);
+G2L["63"]["CornerRadius"] = UDim.new(0, 3);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingDesc
-G2L["64"] = Instance.new("TextLabel", G2L["5e"]);
-G2L["64"]["TextWrapped"] = true;
-G2L["64"]["BorderSizePixel"] = 0;
-G2L["64"]["TextSize"] = 14;
-G2L["64"]["TextScaled"] = true;
-G2L["64"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["64"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["64"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["64"]["BackgroundTransparency"] = 1;
-G2L["64"]["Size"] = UDim2.new(0, 175, 0, 36);
-G2L["64"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["64"]["Text"] = [[Setting Description]];
-G2L["64"]["Name"] = [[SettingDesc]];
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.LayOrder.UIPadding
+G2L["64"] = Instance.new("UIPadding", G2L["62"]);
+G2L["64"]["PaddingTop"] = UDim.new(0, 4);
+G2L["64"]["PaddingRight"] = UDim.new(0, 4);
+G2L["64"]["PaddingLeft"] = UDim.new(0, 4);
+G2L["64"]["PaddingBottom"] = UDim.new(0, 4);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingDesc.UICorner
-G2L["65"] = Instance.new("UICorner", G2L["64"]);
-G2L["65"]["CornerRadius"] = UDim.new(0, 3);
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.ActionName
+G2L["65"] = Instance.new("TextLabel", G2L["5a"]);
+G2L["65"]["TextWrapped"] = true;
+G2L["65"]["BorderSizePixel"] = 0;
+G2L["65"]["TextSize"] = 14;
+G2L["65"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["65"]["TextScaled"] = true;
+G2L["65"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["65"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+G2L["65"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["65"]["BackgroundTransparency"] = 1;
+G2L["65"]["Size"] = UDim2.new(0, 113, 0, 36);
+G2L["65"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["65"]["Text"] = [[Action - ]];
+G2L["65"]["Name"] = [[ActionName]];
+G2L["65"]["Position"] = UDim2.new(-0, 0, -0.0625, 0);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.SettingsAssets.DefaultSetting.SettingDesc.UIPadding
-G2L["66"] = Instance.new("UIPadding", G2L["64"]);
-G2L["66"]["PaddingTop"] = UDim.new(0, 5);
-G2L["66"]["PaddingRight"] = UDim.new(0, 5);
-G2L["66"]["PaddingLeft"] = UDim.new(0, 5);
-G2L["66"]["PaddingBottom"] = UDim.new(0, 5);
+-- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.ActionName.UIPadding
+G2L["66"] = Instance.new("UIPadding", G2L["65"]);
+G2L["66"]["PaddingTop"] = UDim.new(0, 7);
+G2L["66"]["PaddingRight"] = UDim.new(0, 7);
+G2L["66"]["PaddingLeft"] = UDim.new(0, 7);
+G2L["66"]["PaddingBottom"] = UDim.new(0, 7);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton
 G2L["67"] = Instance.new("TextButton", G2L["29"]);
 G2L["67"]["BorderSizePixel"] = 0;
-G2L["67"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 G2L["67"]["TextSize"] = 20;
 G2L["67"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
 G2L["67"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
@@ -1032,136 +1051,132 @@ G2L["67"]["BackgroundTransparency"] = 0.6;
 G2L["67"]["Size"] = UDim2.new(0, 247, 0, 36);
 G2L["67"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["67"]["Text"] = [[]];
-G2L["67"]["Name"] = [[ActionButton]];
+G2L["67"]["Name"] = [[CoordinateButton]];
 G2L["67"]["Visible"] = false;
-G2L["67"]["Position"] = UDim2.new(-0.04766, 0, 0.07342, 0);
+G2L["67"]["Position"] = UDim2.new(0.62593, 0, 0.04865, 0);
 
+-- Tags
+CollectionService:AddTag(G2L["67"], [[Disposable]]);
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.UICorner
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.UICorner
 G2L["68"] = Instance.new("UICorner", G2L["67"]);
 G2L["68"]["CornerRadius"] = UDim.new(0, 5);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.Argument
-G2L["69"] = Instance.new("TextButton", G2L["67"]);
-G2L["69"]["TextWrapped"] = true;
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.Delete
+G2L["69"] = Instance.new("ImageButton", G2L["67"]);
 G2L["69"]["BorderSizePixel"] = 0;
-G2L["69"]["TextSize"] = 20;
-G2L["69"]["TextScaled"] = true;
-G2L["69"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["69"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["69"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["69"]["ZIndex"] = 2;
+G2L["69"]["BackgroundTransparency"] = 1;
+G2L["69"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["69"]["ImageColor3"] = Color3.fromRGB(215, 215, 215);
 G2L["69"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["69"]["BackgroundTransparency"] = 0.6;
-G2L["69"]["Size"] = UDim2.new(0, 65, 0, 25);
+G2L["69"]["Image"] = [[rbxassetid://13857725039]];
+G2L["69"]["Size"] = UDim2.new(0, 22, 0, 22);
 G2L["69"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["69"]["Text"] = [[...]];
-G2L["69"]["Name"] = [[Argument]];
-G2L["69"]["Position"] = UDim2.new(0.79973, 0, 0.5, 0);
+G2L["69"]["Name"] = [[Delete]];
+G2L["69"]["Rotation"] = 45;
+G2L["69"]["Position"] = UDim2.new(0.07642, 0, 0.47167, 0);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.Argument.UICorner
-G2L["6a"] = Instance.new("UICorner", G2L["69"]);
-G2L["6a"]["CornerRadius"] = UDim.new(0, 3);
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.CoordName
+G2L["6a"] = Instance.new("TextBox", G2L["67"]);
+G2L["6a"]["CursorPosition"] = -1;
+G2L["6a"]["Name"] = [[CoordName]];
+G2L["6a"]["PlaceholderColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["6a"]["BorderSizePixel"] = 0;
+G2L["6a"]["TextWrapped"] = true;
+G2L["6a"]["TextTransparency"] = 0.2;
+G2L["6a"]["TextSize"] = 15;
+G2L["6a"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["6a"]["TextScaled"] = true;
+G2L["6a"]["BackgroundColor3"] = Color3.fromRGB(66, 66, 66);
+G2L["6a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6a"]["PlaceholderText"] = [[Unnamed]];
+G2L["6a"]["Size"] = UDim2.new(0, 80, 0, 22);
+G2L["6a"]["Position"] = UDim2.new(0.64959, 0, 0.19389, 0);
+G2L["6a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6a"]["Text"] = [[]];
+G2L["6a"]["BackgroundTransparency"] = 0.6;
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.Argument.UIPadding
-G2L["6b"] = Instance.new("UIPadding", G2L["69"]);
-G2L["6b"]["PaddingTop"] = UDim.new(0, 4);
-G2L["6b"]["PaddingRight"] = UDim.new(0, 4);
-G2L["6b"]["PaddingLeft"] = UDim.new(0, 4);
-G2L["6b"]["PaddingBottom"] = UDim.new(0, 4);
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.CoordName.UICorner
+G2L["6b"] = Instance.new("UICorner", G2L["6a"]);
+G2L["6b"]["CornerRadius"] = UDim.new(0, 3);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.UIPadding
-G2L["6c"] = Instance.new("UIPadding", G2L["67"]);
-G2L["6c"]["PaddingTop"] = UDim.new(0, 2);
-G2L["6c"]["PaddingRight"] = UDim.new(0, 5);
-G2L["6c"]["PaddingLeft"] = UDim.new(0, 60);
-G2L["6c"]["PaddingBottom"] = UDim.new(0, 2);
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.CoordName.UIPadding
+G2L["6c"] = Instance.new("UIPadding", G2L["6a"]);
+G2L["6c"]["PaddingTop"] = UDim.new(0, 4);
+G2L["6c"]["PaddingRight"] = UDim.new(0, 4);
+G2L["6c"]["PaddingLeft"] = UDim.new(0, 4);
+G2L["6c"]["PaddingBottom"] = UDim.new(0, 4);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.UIStroke
-G2L["6d"] = Instance.new("UIStroke", G2L["67"]);
-G2L["6d"]["Thickness"] = 1.5;
-G2L["6d"]["Color"] = Color3.fromRGB(34, 34, 34);
-G2L["6d"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.XCoord
+G2L["6d"] = Instance.new("TextLabel", G2L["67"]);
+G2L["6d"]["TextWrapped"] = true;
+G2L["6d"]["BorderSizePixel"] = 0;
+G2L["6d"]["TextSize"] = 14;
+G2L["6d"]["TextScaled"] = true;
+G2L["6d"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["6d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6d"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["6d"]["BackgroundTransparency"] = 0.6;
+G2L["6d"]["Size"] = UDim2.new(0, 50, 0, 22);
+G2L["6d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6d"]["Text"] = [[X]];
+G2L["6d"]["Name"] = [[XCoord]];
+G2L["6d"]["Position"] = UDim2.new(0.152, 0, 0.194, 0);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.Delete
-G2L["6e"] = Instance.new("ImageButton", G2L["67"]);
-G2L["6e"]["BorderSizePixel"] = 0;
-G2L["6e"]["BackgroundTransparency"] = 1;
-G2L["6e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["6e"]["ImageColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["6e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["6e"]["Image"] = [[rbxassetid://13857725039]];
-G2L["6e"]["Size"] = UDim2.new(0, 22, 0, 22);
-G2L["6e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6e"]["Name"] = [[Delete]];
-G2L["6e"]["Rotation"] = 45;
-G2L["6e"]["Position"] = UDim2.new(-0.23391, 0, 0.52156, 0);
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.XCoord.UICorner
+G2L["6e"] = Instance.new("UICorner", G2L["6d"]);
+G2L["6e"]["CornerRadius"] = UDim.new(0, 3);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.LayOrder
-G2L["6f"] = Instance.new("TextBox", G2L["67"]);
-G2L["6f"]["Name"] = [[LayOrder]];
-G2L["6f"]["PlaceholderColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["6f"]["BorderSizePixel"] = 0;
-G2L["6f"]["TextWrapped"] = true;
-G2L["6f"]["TextSize"] = 14;
-G2L["6f"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["6f"]["TextScaled"] = true;
-G2L["6f"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
-G2L["6f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["6f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["6f"]["ClearTextOnFocus"] = false;
-G2L["6f"]["PlaceholderText"] = [[...]];
-G2L["6f"]["Size"] = UDim2.new(0, 22, 0, 22);
-G2L["6f"]["Position"] = UDim2.new(-0.1, 0, 0.474, 0);
-G2L["6f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6f"]["Text"] = [[1]];
-G2L["6f"]["BackgroundTransparency"] = 0.6;
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.XCoord.UIPadding
+G2L["6f"] = Instance.new("UIPadding", G2L["6d"]);
+G2L["6f"]["PaddingTop"] = UDim.new(0, 3);
+G2L["6f"]["PaddingRight"] = UDim.new(0, 3);
+G2L["6f"]["PaddingLeft"] = UDim.new(0, 3);
+G2L["6f"]["PaddingBottom"] = UDim.new(0, 3);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.LayOrder.UICorner
-G2L["70"] = Instance.new("UICorner", G2L["6f"]);
-G2L["70"]["CornerRadius"] = UDim.new(0, 3);
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.YCoord
+G2L["70"] = Instance.new("TextLabel", G2L["67"]);
+G2L["70"]["TextWrapped"] = true;
+G2L["70"]["BorderSizePixel"] = 0;
+G2L["70"]["TextSize"] = 14;
+G2L["70"]["TextScaled"] = true;
+G2L["70"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 22);
+G2L["70"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["70"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
+G2L["70"]["BackgroundTransparency"] = 0.6;
+G2L["70"]["Size"] = UDim2.new(0, 50, 0, 22);
+G2L["70"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["70"]["Text"] = [[Y]];
+G2L["70"]["Name"] = [[YCoord]];
+G2L["70"]["Position"] = UDim2.new(0.375, 0, 0.194, 0);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.LayOrder.UIPadding
-G2L["71"] = Instance.new("UIPadding", G2L["6f"]);
-G2L["71"]["PaddingTop"] = UDim.new(0, 4);
-G2L["71"]["PaddingRight"] = UDim.new(0, 4);
-G2L["71"]["PaddingLeft"] = UDim.new(0, 4);
-G2L["71"]["PaddingBottom"] = UDim.new(0, 4);
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.YCoord.UICorner
+G2L["71"] = Instance.new("UICorner", G2L["70"]);
+G2L["71"]["CornerRadius"] = UDim.new(0, 3);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.ActionName
-G2L["72"] = Instance.new("TextLabel", G2L["67"]);
-G2L["72"]["TextWrapped"] = true;
-G2L["72"]["BorderSizePixel"] = 0;
-G2L["72"]["TextSize"] = 14;
-G2L["72"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["72"]["TextScaled"] = true;
-G2L["72"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["72"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["72"]["TextColor3"] = Color3.fromRGB(215, 215, 215);
-G2L["72"]["BackgroundTransparency"] = 1;
-G2L["72"]["Size"] = UDim2.new(0, 113, 0, 36);
-G2L["72"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["72"]["Text"] = [[Action - ]];
-G2L["72"]["Name"] = [[ActionName]];
-G2L["72"]["Position"] = UDim2.new(-0, 0, -0.0625, 0);
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.YCoord.UIPadding
+G2L["72"] = Instance.new("UIPadding", G2L["70"]);
+G2L["72"]["PaddingTop"] = UDim.new(0, 3);
+G2L["72"]["PaddingRight"] = UDim.new(0, 3);
+G2L["72"]["PaddingLeft"] = UDim.new(0, 3);
+G2L["72"]["PaddingBottom"] = UDim.new(0, 3);
 
 
--- StarterGui.EZAutofarm.Background.Main.Storage.ActionButton.ActionName.UIPadding
-G2L["73"] = Instance.new("UIPadding", G2L["72"]);
-G2L["73"]["PaddingTop"] = UDim.new(0, 7);
-G2L["73"]["PaddingRight"] = UDim.new(0, 7);
-G2L["73"]["PaddingLeft"] = UDim.new(0, 7);
-G2L["73"]["PaddingBottom"] = UDim.new(0, 7);
+-- StarterGui.EZAutofarm.Background.Main.Storage.CoordinateButton.UIStroke
+G2L["73"] = Instance.new("UIStroke", G2L["67"]);
+G2L["73"]["Thickness"] = 1.5;
+G2L["73"]["Color"] = Color3.fromRGB(34, 34, 34);
+G2L["73"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
 
 -- StarterGui.EZAutofarm.Background.Main.Design
@@ -1391,8 +1406,9 @@ G2L["8b"]["PaddingBottom"] = UDim.new(0, 15);
 -- StarterGui.EZAutofarm.Background.Main.UIDragDetector
 G2L["8c"] = Instance.new("UIDragDetector", G2L["3"]);
 G2L["8c"]["SelectionModeDragSpeed"] = UDim2.new(1, 0, 1, 0);
-G2L["8c"]["BoundingUI"] = G2L["1"]
 -- [ERROR] cannot convert BoundingUI, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["8c"]["DragUDim2"] = UDim2.new(0, 141, 0, 4);
+G2L["8c"]["BoundingUI"] = G2L["1"]
 
 
 -- StarterGui.EZAutofarm.Background.Main.UIStroke
