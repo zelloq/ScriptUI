@@ -1,3 +1,4 @@
+warn(Player.Name)
 -- Instances: 22 | Scripts: 0 | Modules: 0 | Tags: 0
 local G2L = {};
 
