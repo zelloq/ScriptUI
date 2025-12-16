@@ -1,5 +1,5 @@
-warn("ui loaded")
--- Instances: 22 | Scripts: 0 | Modules: 0 | Tags: 0
+
+-- Instances: 28 | Scripts: 0 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.Main
@@ -27,7 +27,7 @@ G2L["2"]["BackgroundTransparency"] = 1;
 G2L["3"] = Instance.new("Frame", G2L["2"]);
 G2L["3"]["BorderSizePixel"] = 0;
 G2L["3"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-G2L["3"]["Size"] = UDim2.new(0, 201, 0, 149);
+G2L["3"]["Size"] = UDim2.new(0, 201, 0, 191);
 G2L["3"]["Position"] = UDim2.new(0.41566, -344, 0.83227, -144);
 G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["Name"] = [[Menu]];
@@ -47,7 +47,7 @@ G2L["5"]["Color"] = Color3.fromRGB(255, 255, 255);
 
 -- StarterGui.Main.Background.Menu.UIDragDetector
 G2L["6"] = Instance.new("UIDragDetector", G2L["3"]);
-G2L["6"]["BoundingUI"] = G2L["2"]
+G2L["6"].BoundingUI = G2L["2"]
 G2L["6"]["DragUDim2"] = UDim2.new(0, -356, 0, 155);
 
 
@@ -79,16 +79,16 @@ G2L["9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["9"]["BackgroundTransparency"] = 1;
 G2L["9"]["Size"] = UDim2.new(0, 150, 0, 49);
 G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9"]["Text"] = [[Desync (RMB)]];
+G2L["9"]["Text"] = [[Desync]];
 G2L["9"]["Name"] = [[Desc]];
 
 
 -- StarterGui.Main.Background.Menu.Desync.Desc.UIPadding
 G2L["a"] = Instance.new("UIPadding", G2L["9"]);
-G2L["a"]["PaddingTop"] = UDim.new(0, 15);
+G2L["a"]["PaddingTop"] = UDim.new(0, 17);
 G2L["a"]["PaddingRight"] = UDim.new(0, 15);
-G2L["a"]["PaddingLeft"] = UDim.new(0, 25);
-G2L["a"]["PaddingBottom"] = UDim.new(0, 15);
+G2L["a"]["PaddingLeft"] = UDim.new(0, 50);
+G2L["a"]["PaddingBottom"] = UDim.new(0, 17);
 
 
 -- StarterGui.Main.Background.Menu.Desync.Button
@@ -212,6 +212,66 @@ G2L["16"]["PaddingTop"] = UDim.new(0, 10);
 G2L["16"]["PaddingRight"] = UDim.new(0, 10);
 G2L["16"]["PaddingLeft"] = UDim.new(0, 10);
 G2L["16"]["PaddingBottom"] = UDim.new(0, 10);
+
+
+-- StarterGui.Main.Background.Menu.WeldPlayer
+G2L["17"] = Instance.new("Frame", G2L["3"]);
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["Size"] = UDim2.new(0, 201, 0, 49);
+G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["Name"] = [[WeldPlayer]];
+G2L["17"]["LayoutOrder"] = -1;
+G2L["17"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.Main.Background.Menu.WeldPlayer.Desc
+G2L["18"] = Instance.new("TextLabel", G2L["17"]);
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["TextSize"] = 14;
+G2L["18"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+G2L["18"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["BackgroundTransparency"] = 1;
+G2L["18"]["Size"] = UDim2.new(0, 150, 0, 49);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Text"] = [[Weld to Nearest Player]];
+G2L["18"]["Name"] = [[Desc]];
+
+
+-- StarterGui.Main.Background.Menu.WeldPlayer.Desc.UIPadding
+G2L["19"] = Instance.new("UIPadding", G2L["18"]);
+G2L["19"]["PaddingTop"] = UDim.new(0, 15);
+G2L["19"]["PaddingRight"] = UDim.new(0, 25);
+G2L["19"]["PaddingLeft"] = UDim.new(0, 15);
+G2L["19"]["PaddingBottom"] = UDim.new(0, 15);
+
+
+-- StarterGui.Main.Background.Menu.WeldPlayer.Button
+G2L["1a"] = Instance.new("TextButton", G2L["17"]);
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["TextSize"] = 14;
+G2L["1a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
+G2L["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1a"]["BackgroundTransparency"] = 0.5;
+G2L["1a"]["Size"] = UDim2.new(0, 25, 0, 25);
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["Text"] = [[]];
+G2L["1a"]["Name"] = [[Button]];
+G2L["1a"]["Position"] = UDim2.new(0.81592, 0, 0.2449, 0);
+
+
+-- StarterGui.Main.Background.Menu.WeldPlayer.Button.UICorner
+G2L["1b"] = Instance.new("UICorner", G2L["1a"]);
+G2L["1b"]["CornerRadius"] = UDim.new(0, 3);
+
+
+-- StarterGui.Main.Background.Menu.WeldPlayer.Button.UIStroke
+G2L["1c"] = Instance.new("UIStroke", G2L["1a"]);
+G2L["1c"]["Color"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
 
 
